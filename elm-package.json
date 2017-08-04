@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "My play-around-with-elm app",
-    "repository": "https://github.com/sdbondi/population-explorer-elm.git",
+    "repository": "https://github.com/sdbondi/elm-population-explorer.git",
     "license": "MIT",
     "source-directories": [
         "src/elm"
