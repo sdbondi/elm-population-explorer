@@ -1,0 +1,11 @@
+%country {
+	@include soft;
+	@include push--small--ends;
+	border: 1px dashed $clr-ntrl-max;
+	cursor: pointer;
+
+	&.is-selected {
+		background-color: $clr-ntrl-20;
+	}
+}
+.country { @extend %country; }

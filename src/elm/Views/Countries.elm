@@ -6,24 +6,44 @@ import Html.Attributes exposing (..)
 import RemoteData exposing (RemoteData(..), WebData)
 import Types.Country exposing (Country, Countries)
 import Types.Msg exposing (Msg(..))
+import Components.Grid exposing (gw, gcol)
 
 
-renderCountry : Country -> Html Msg
-renderCountry country =
-    div [ class "country" ] [ a [ href "#", onClick (SelectCountry country) ] [ text country ] ]
+joinClass =
+    String.join " "
 
 
-renderCountries : WebData Countries -> List (Html Msg)
-renderCountries resp =
-    case resp of
-        Success countries ->
-            List.map renderCountry countries
+renderCountry : Maybe Country -> Country -> Html Msg
+renderCountry selected country =
+    let
+        selectedClass =
+            case selected of
+                Just c ->
+                    if c == country then
+                        "is-selected"
+                    else
+                        ""
 
-        Failure _ ->
-            [ text "An error!" ]
+                Nothing ->
+                    ""
+    in
+        gcol ( 1, 6 )
+            [ div [ class (joinClass [ "country", selectedClass ]), onClick (SelectCountry country) ] [ text country ]
+            ]
 
-        NotAsked ->
-            [ text "" ]
 
-        Loading ->
-            [ div [ class "loader" ] [ text "Loading..." ] ]
+renderCountries : WebData Countries -> Maybe Country -> Html Msg
+renderCountries resp selected =
+    div [ class "countries" ] <|
+        case resp of
+            Success countries ->
+                [ gw (List.map (renderCountry selected) countries) ]
+
+            Failure _ ->
+                [ text "An error!" ]
+
+            NotAsked ->
+                [ text "Please wait..." ]
+
+            Loading ->
+                [ div [ class "loader" ] [ text "Loading..." ] ]

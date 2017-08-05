@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    FONTS
+\*------------------------------------*/
+/**
+ * Base Font Face
+ *
+ * This font is enabled via custom/base/_fonts.scss
+ */
+$font-base          : "rubik";
+$font-base-path     : "../fnt/rubik";
+$font-base-filename : "rubik-regular-webfont";
+$font-base-stack    : $font-base, Arial, sans-serif;
+
+/**
+ * Base Font Variations
+ */
+$font-base-filename-i  : "rubik-lightitalic-webfont"; // italic
+$font-base-filename-b  : "rubik-medium-webfont"; // bold
+$font-base-filename-bi : "rubik-mediumitalic-webfont"; // bold-italic
+
+
+
+
+
+/**
+ * Alternate Font Face
+ */
+$font-alt          : "galano-grotesque";
+$font-alt-path     : "../fnt/galano-grotesque";
+$font-alt-filename : "galano_grotesque_demo_bold-webfont";
+$font-alt-stack    : $font-alt, Arial, sans-serif;
+
+/**
+ * Base Font Variations
+ */
+$font-alt-filename-i  : "galano_grotesque_demo_bold-webfont"; // italic
+$font-alt-filename-b  : "galano_grotesque_demo_bold-webfont"; // bold
+$font-alt-filename-bi : "galano_grotesque_demo_bold-webfont"; // bold-italic

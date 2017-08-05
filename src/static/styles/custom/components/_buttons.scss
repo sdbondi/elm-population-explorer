@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+button { @extend %link--transition;}
+
+%btn {
+  @extend %btn !optional;
+  @extend %link--transition;
+  color: $clr-ntrl-min;
+
+  &[disabled],
+  &:disabled {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+
+    }
+  }
+}
+
+.btn--primary {
+  @extend %btn;
+
+  @include bgc--link-states(
+    $clr-primary,
+    $clr-primary-lt,
+    $clr-primary-dk
+  );
+}

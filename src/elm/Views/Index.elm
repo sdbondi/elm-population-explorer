@@ -22,5 +22,5 @@ view model =
                 ]
             ]
         , h2 [] [ text "Countries" ]
-        , div [] (renderCountries model.countries)
+        , div [] [ renderCountries model.countries model.selectedCountry ]
         ]
