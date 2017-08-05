@@ -12,6 +12,11 @@ type alias Headers =
     List Header
 
 
+baseUrl : String -> String
+baseUrl uri =
+    "http://api.population.io/1.0/" ++ uri
+
+
 convertHeader : Header -> Http.Header
 convertHeader header =
     let
